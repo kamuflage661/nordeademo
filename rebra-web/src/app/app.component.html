@@ -8,20 +8,12 @@
     <th>zysk/strata</th>
     <th>procentowo</th>
   </tr>
-  <tr>
-    <td>KGHM</td>
-    <td>10</td>
-    <td>100.20zł</td>
-    <td>120.23zł</td>
-    <td>200.30zł</td>
-    <td>119.99%</td>
-  </tr>
-  <tr>
-    <td>KGHM</td>
-    <td>4</td>
-    <td>340.20zł</td>
-    <td>120.23zł</td>
-    <td>-879.88zł</td>
-    <td>35.34%</td>
+  <tr *ngFor="let investment of investments">
+    <td>{{investment.name}}</td>
+    <td>{{investment.quantity}}</td>
+    <td>{{investment.buyPrice}}</td>
+    <td>{{investment.actualPrice}}</td>
+    <td>{{investment.income}}</td>
+    <td>{{investment.percentage}}</td>
   </tr>
 </table>
