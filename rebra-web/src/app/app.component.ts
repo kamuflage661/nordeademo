@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { INVESTMENTS } from './mock-investments';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,6 @@ import { INVESTMENTS } from './mock-investments';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  investments = INVESTMENTS;
+
+
 }

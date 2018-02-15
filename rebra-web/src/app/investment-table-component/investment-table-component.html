@@ -1,0 +1,18 @@
+<table class="rwd-table">
+  <tr>
+    <th>walor</th>
+    <th>ilość</th>
+    <th>cena kupna</th>
+    <th>cena aktualna</th>
+    <th>zysk/strata</th>
+    <th>procentowo</th>
+  </tr>
+  <tr *ngFor="let investment of investmentList">
+    <td>{{investment.name}}</td>
+    <td>{{investment.quantity}}</td>
+    <td>{{investment.buyPrice}}</td>
+    <td>{{investment.actualPrice}}</td>
+    <td>{{investment.income}}</td>
+    <td>{{investment.percentage}}</td>
+  </tr>
+</table>
