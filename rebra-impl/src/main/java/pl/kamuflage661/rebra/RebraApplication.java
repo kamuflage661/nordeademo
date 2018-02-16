@@ -1,12 +1,12 @@
-package pl.kamuflage661.nordeademo;
+package pl.kamuflage661.rebra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NordeademoApplication {
+public class RebraApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NordeademoApplication.class, args);
+		SpringApplication.run(RebraApplication.class, args);
 	}
 }
