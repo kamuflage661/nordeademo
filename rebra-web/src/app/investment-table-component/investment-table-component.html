@@ -7,7 +7,7 @@
     <th>zysk/strata</th>
     <th>procentowo</th>
   </tr>
-  <tr *ngFor="let investment of investmentList">
+  <tr *ngFor="let investment of investmentDataService.getMockedInvestments()">
     <td>{{investment.name}}</td>
     <td>{{investment.quantity}}</td>
     <td>{{investment.buyPrice}}</td>

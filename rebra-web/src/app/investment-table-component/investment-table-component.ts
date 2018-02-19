@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MOCK_INVESTMENTS } from './model/mock-investments';
+import { Component, OnInit} from '@angular/core';
+
+import { Investment } from './model/investment';
+import { InvestmentDataService } from './service/investment-data.service';
 
 @Component({
   selector: 'investment-table-component',
@@ -8,9 +10,7 @@ import { MOCK_INVESTMENTS } from './model/mock-investments';
 })
 export class InvestmentTableComponentComponent implements OnInit {
 
-  investmentList = MOCK_INVESTMENTS;
-
-  constructor() { }
+  constructor(private investmentDataService : InvestmentDataService ) { }
 
   ngOnInit() {
 
