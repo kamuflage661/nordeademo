@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { InvestmentTableComponentComponent } from './investment-table-component/investment-table-component';
-import { InvestmentDataService } from './investment-table-component/service/investment-data.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,7 @@ import { InvestmentDataService } from './investment-table-component/service/inve
   imports: [
     BrowserModule
   ],
-  providers: [InvestmentDataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

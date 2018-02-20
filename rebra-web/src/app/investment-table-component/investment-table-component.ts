@@ -7,13 +7,20 @@ import { InvestmentDataService } from './service/investment-data.service';
   selector: 'investment-table-component',
   templateUrl: './investment-table-component.html',
   styleUrls: ['./investment-table-component.css']
+  providers: [InvestmentDataService],
 })
 export class InvestmentTableComponentComponent implements OnInit {
 
   constructor(private investmentDataService : InvestmentDataService ) { }
 
-  ngOnInit() {
+  investmentData : Investment[];
 
+  getInvestmentData(): void {
+    this.investmentDataService.getMockedInvestmentsObservable().subscribe(investmentData => this.investmentData = investmentData);
+  }
+
+  ngOnInit() {
+    this.getInvestmentData();
   }
 
 }
