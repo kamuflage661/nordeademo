@@ -2,12 +2,14 @@ package pl.kamuflage661.rebra.investmenttable;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.ArrayList;
 
 @RestController
+@CrossOrigin
 public class InvestmentTableController {
 
     @RequestMapping("/investmenttable")

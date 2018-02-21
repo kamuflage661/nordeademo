@@ -6,7 +6,7 @@ import { InvestmentDataService } from './service/investment-data.service';
 @Component({
   selector: 'investment-table-component',
   templateUrl: './investment-table-component.html',
-  styleUrls: ['./investment-table-component.css']
+  styleUrls: ['./investment-table-component.css'],
   providers: [InvestmentDataService],
 })
 export class InvestmentTableComponentComponent implements OnInit {
@@ -15,8 +15,12 @@ export class InvestmentTableComponentComponent implements OnInit {
 
   investmentData : Investment[];
 
-  getInvestmentData(): void {
+  getMockedInvestmentData(): void {
     this.investmentDataService.getMockedInvestmentsObservable().subscribe(investmentData => this.investmentData = investmentData);
+  }
+
+  getInvestmentData(): void {
+    this.investmentDataService.getInvestments().subscribe(investmentData => this.investmentData = investmentData);
   }
 
   ngOnInit() {
