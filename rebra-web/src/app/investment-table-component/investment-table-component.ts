@@ -11,7 +11,9 @@ import { InvestmentDataService } from './service/investment-data.service';
 })
 export class InvestmentTableComponentComponent implements OnInit {
 
-  constructor(private investmentDataService : InvestmentDataService ) { }
+  displayedColumns = ['name','quantity', 'buyPrice', 'actualPrice', 'income', 'percentage'];
+
+  constructor(private investmentDataService : InvestmentDataService ) {}
 
   investmentData : Investment[];
 
