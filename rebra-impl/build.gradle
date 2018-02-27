@@ -9,16 +9,22 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("com.google.cloud.tools:appengine-gradle-plugin:+")
+		classpath("org.akhikhl.gretty:gretty:+")
 	}
 }
 
 apply plugin: 'java'
+apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.google.cloud.tools.appengine'
+apply plugin: 'org.akhikhl.gretty'
 
 group = 'pl.kamuflage661'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -28,8 +34,27 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-webflux')
-	runtime('com.h2database:h2')
+	compile('javax.servlet:javax.servlet-api:3.1.0')
+	compile('com.google.appengine:appengine:+')
+	compile('org.springframework.boot:spring-boot-starter-web')  {
+		exclude module: "spring-boot-starter-tomcat"
+		exclude module: "jul-to-slf4j"
+	}
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
+}
+
+gretty {
+	httpPort = 8080
+	contextPath = '/'
+	servletContainer = 'jetty9'  // What App Engine Flexible uses
+}
+
+appengine {
+
+	deploy {   // deploy configuration
+		stopPreviousVersion = true  // default - stop the current version
+		promote = true              // default - & make this the current version
+	}
+
 }
